@@ -1,7 +1,13 @@
 import 'package:flutter/material.dart';
-import 'package:untitled15/src/screens/ItemPage.dart';
-import 'package:untitled15/src/screens/homepage.dart';
-import 'package:untitled15/src/screens/splash_screen.dart';
+import 'package:untitled1/screens/0nboarding_screen.dart';
+import 'package:untitled1/screens/Splash_screen.dart';
+import 'package:untitled1/screens/home_screen.dart';
+import 'package:untitled1/screens/itempage.dart';
+import 'package:untitled1/screens/login.dart';
+import 'package:untitled1/screens/my_profile.dart';
+import 'package:untitled1/screens/otp_verficationscreen.dart';
+import 'package:untitled1/screens/register.dart';
+import 'package:untitled1/screens/terms_conditions.dart';
 
 void main() {
   runApp(const MyApp());
@@ -14,32 +20,33 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-        title: 'Flutter Demo',
-        theme: ThemeData(
-          // This is the theme of your application.
-          //
-          // Try running your application with "flutter run". You'll see the
-          // application has a blue toolbar. Then, without quitting the app, try
-          // changing the primarySwatch below to Colors.green and then invoke
-          // "hot reload" (press "r" in the console where you ran "flutter run",
-          // or simply save your changes to "hot reload" in a Flutter IDE).
-          // Notice that the counter didn't reset back to zero; the application
-          // is not restarted.
-          primarySwatch: Colors.blue,
-        ),
-      // home:Homepage() //const MyHomePage(title: 'Flutter Demo Home Page'),
-        routes: {
-          "/":(context) => splash_screen(),
-          "homepage":(context)=>Homepage(),
-          "itemPage":(context)=>ItemPage(),
+      title: 'Flutter Demo',
+      theme: ThemeData(
+        // This is the theme of your application.
+        //
+        // Try running your application with "flutter run". You'll see the
+        // application has a blue toolbar. Then, without quitting the app, try
+        // changing the primarySwatch below to Colors.green and then invoke
+        // "hot reload" (press "r" in the console where you ran "flutter run",
+        // or simply save your changes to "hot reload" in a Flutter IDE).
+        // Notice that the counter didn't reset back to zero; the application
+        // is not restarted.
+        primarySwatch: Colors.green,
+      ),
+      debugShowCheckedModeBanner: false,
+      //home:Terms_Conditions(),//const MyHomePage(title: 'Flutter Demo Home Page'),
+      routes: {
+        "/": (context) => Splash_Screen(),
+        "OnboardingScreen": (context) => Login_Screen(),
+        "Login_Screen": (context) => Otp_Verfication(),
+        "Otp_Verfication": (context) => Register_Screen(),
+        "Register_Screen": (context) => Home_Screen(),
+       // "Home_Screen": (context) => Home_Screen(),
 
-        }
+      },
     );
   }
-
-
 }
-
 
 class MyHomePage extends StatefulWidget {
   const MyHomePage({super.key, required this.title});
